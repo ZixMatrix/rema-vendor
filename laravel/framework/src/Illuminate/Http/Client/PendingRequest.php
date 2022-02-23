@@ -8,13 +8,16 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\HandlerStack;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\Client\Events\ConnectionFailed;
 use Illuminate\Http\Client\Events\RequestSending;
 use Illuminate\Http\Client\Events\ResponseReceived;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Conditionable;
 use Illuminate\Support\Traits\Macroable;
+use JsonSerializable;
 use Psr\Http\Message\MessageInterface;
 use Symfony\Component\VarDumper\VarDumper;
 
@@ -154,6 +157,20 @@ class PendingRequest
      * @var \Illuminate\Http\Client\Request|null
      */
     protected $request;
+
+    /**
+     * The Guzzle request options that are mergable via array_merge_recursive.
+     *
+     * @var array
+     */
+    protected $mergableOptions = [
+        'cookies',
+        'form_params',
+        'headers',
+        'json',
+        'multipart',
+        'query',
+    ];
 
     /**
      * Create a new HTTP Client instance.
@@ -488,7 +505,7 @@ class PendingRequest
     }
 
     /**
-     * Merge new options into the client.
+     * Replace the specified options on the request.
      *
      * @param  array  $options
      * @return $this
@@ -496,7 +513,10 @@ class PendingRequest
     public function withOptions(array $options)
     {
         return tap($this, function ($request) use ($options) {
-            return $this->options = array_merge_recursive($this->options, $options);
+            return $this->options = array_replace_recursive(
+                array_merge_recursive($this->options, Arr::only($options, $this->mergableOptions)),
+                $options
+            );
         });
     }
 
@@ -728,7 +748,13 @@ class PendingRequest
             $options[$this->bodyFormat] = $this->pendingBody;
         }
 
-        return collect($options)->toArray();
+        return collect($options)->map(function ($value, $key) {
+            if ($key === 'json' && $value instanceof JsonSerializable) {
+                return $value;
+            }
+
+            return $value instanceof Arrayable ? $value->toArray() : $value;
+        })->all();
     }
 
     /**
@@ -814,7 +840,11 @@ class PendingRequest
             $laravelData = is_array($parsedData) ? $parsedData : [];
         }
 
-        return $laravelData;
+        if ($laravelData instanceof JsonSerializable) {
+            $laravelData = $laravelData->jsonSerialize();
+        }
+
+        return is_array($laravelData) ? $laravelData : [];
     }
 
     /**
@@ -1018,14 +1048,17 @@ class PendingRequest
     }
 
     /**
-     * Merge the given options with the current request options.
+     * Replace the given options with the current request options.
      *
      * @param  array  $options
      * @return array
      */
     public function mergeOptions(...$options)
     {
-        return array_merge_recursive($this->options, ...$options);
+        return array_replace_recursive(
+            array_merge_recursive($this->options, Arr::only($options, $this->mergableOptions)),
+            ...$options
+        );
     }
 
     /**
@@ -1130,5 +1163,15 @@ class PendingRequest
         );
 
         return $this;
+    }
+
+    /**
+     * Get the pending request options.
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
     }
 }
