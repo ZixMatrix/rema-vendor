@@ -176,6 +176,7 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         ),
         'A' => 
         array (
+            'Asm89\\Stack\\' => 12,
             'App\\' => 4,
         ),
     );
@@ -523,6 +524,10 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Asm89\\Stack\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -771,6 +776,8 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'App\\Support\\Facades\\URLHelper' => __DIR__ . '/../..' . '/app/Support/Facades/URLHelper.php',
         'App\\Support\\NotificationCollection' => __DIR__ . '/../..' . '/app/Support/NotificationCollection.php',
         'App\\Support\\URLHelper' => __DIR__ . '/../..' . '/app/Support/URLHelper.php',
+        'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
+        'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -2044,6 +2051,7 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'Illuminate\\Contracts\\Routing\\ResponseFactory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Routing/ResponseFactory.php',
         'Illuminate\\Contracts\\Routing\\UrlGenerator' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Routing/UrlGenerator.php',
         'Illuminate\\Contracts\\Routing\\UrlRoutable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Routing/UrlRoutable.php',
+        'Illuminate\\Contracts\\Session\\Middleware\\AuthenticatesSessions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Session/Middleware/AuthenticatesSessions.php',
         'Illuminate\\Contracts\\Session\\Session' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Session/Session.php',
         'Illuminate\\Contracts\\Support\\Arrayable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/Arrayable.php',
         'Illuminate\\Contracts\\Support\\CanBeEscapedWhenCastToString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/CanBeEscapedWhenCastToString.php',
@@ -2080,6 +2088,7 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'Illuminate\\Database\\Concerns\\BuildsQueries' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php',
         'Illuminate\\Database\\Concerns\\ExplainsQueries' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/ExplainsQueries.php',
         'Illuminate\\Database\\Concerns\\ManagesTransactions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php',
+        'Illuminate\\Database\\Concerns\\ParsesSearchPath' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/ParsesSearchPath.php',
         'Illuminate\\Database\\ConfigurationUrlParser' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/ConfigurationUrlParser.php',
         'Illuminate\\Database\\Connection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Connection.php',
         'Illuminate\\Database\\ConnectionInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/ConnectionInterface.php',
@@ -4285,6 +4294,7 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'PhpParser\\Parser\\Tokens' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',
@@ -4705,8 +4715,6 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'SebastianBergmann\\CliParser\\UnknownOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/UnknownOptionException.php',
         'SebastianBergmann\\CodeCoverage\\BranchAndPathCoverageNotSupportedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
-        'SebastianBergmann\\CodeCoverage\\Data\\ProcessedCodeCoverageData' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Data/ProcessedCodeCoverageData.php',
-        'SebastianBergmann\\CodeCoverage\\Data\\RawCodeCoverageData' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Data/RawCodeCoverageData.php',
         'SebastianBergmann\\CodeCoverage\\DeadCodeDetectionNotSupportedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\PathExistsButIsNotDirectoryException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php',
@@ -4734,6 +4742,8 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'SebastianBergmann\\CodeCoverage\\Node\\File' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Node/File.php',
         'SebastianBergmann\\CodeCoverage\\Node\\Iterator' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Node/Iterator.php',
         'SebastianBergmann\\CodeCoverage\\ParserException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/ParserException.php',
+        'SebastianBergmann\\CodeCoverage\\ProcessedCodeCoverageData' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/ProcessedCodeCoverageData.php',
+        'SebastianBergmann\\CodeCoverage\\RawCodeCoverageData' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/RawCodeCoverageData.php',
         'SebastianBergmann\\CodeCoverage\\ReflectionException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/ReflectionException.php',
         'SebastianBergmann\\CodeCoverage\\ReportAlreadyFinalizedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php',
         'SebastianBergmann\\CodeCoverage\\Report\\Clover' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Report/Clover.php',
@@ -4938,9 +4948,10 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'Spatie\\FlareClient\\Truncation\\TrimStringsStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TrimStringsStrategy.php',
         'Spatie\\FlareClient\\Truncation\\TruncationStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TruncationStrategy.php',
         'Spatie\\FlareClient\\View' => __DIR__ . '/..' . '/spatie/flare-client-php/src/View.php',
-        'Spatie\\Ignition\\Config\\DefaultConfigFinder' => __DIR__ . '/..' . '/spatie/ignition/src/Config/DefaultConfigFinder.php',
+        'Spatie\\Ignition\\Config\\FileConfigManager' => __DIR__ . '/..' . '/spatie/ignition/src/Config/FileConfigManager.php',
         'Spatie\\Ignition\\Config\\IgnitionConfig' => __DIR__ . '/..' . '/spatie/ignition/src/Config/IgnitionConfig.php',
         'Spatie\\Ignition\\Contracts\\BaseSolution' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/BaseSolution.php',
+        'Spatie\\Ignition\\Contracts\\ConfigManager' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/ConfigManager.php',
         'Spatie\\Ignition\\Contracts\\HasSolutionsForThrowable' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/HasSolutionsForThrowable.php',
         'Spatie\\Ignition\\Contracts\\ProvidesSolution' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/ProvidesSolution.php',
         'Spatie\\Ignition\\Contracts\\RunnableSolution' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/RunnableSolution.php',
@@ -5798,6 +5809,7 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'Symfony\\Component\\VarDumper\\Caster\\IntlCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/IntlCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\LinkStub' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/LinkStub.php',
         'Symfony\\Component\\VarDumper\\Caster\\MemcachedCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/MemcachedCaster.php',
+        'Symfony\\Component\\VarDumper\\Caster\\MysqliCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/MysqliCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\PdoCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/PdoCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\PgSqlCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/PgSqlCaster.php',
         'Symfony\\Component\\VarDumper\\Caster\\ProxyManagerCaster' => __DIR__ . '/..' . '/symfony/var-dumper/Caster/ProxyManagerCaster.php',
@@ -5863,6 +5875,7 @@ class ComposerStaticInit81331471091017e692fa822e4ace9987
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php72\\Php72' => __DIR__ . '/..' . '/symfony/polyfill-php72/Php72.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'Symfony\\Polyfill\\Php81\\Php81' => __DIR__ . '/..' . '/symfony/polyfill-php81/Php81.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
